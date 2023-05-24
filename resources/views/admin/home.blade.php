@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <form  class="form" action="{{route('cotizaciones.guardar')}}" method="post">
+        <form  class="form" action="{{route('cotizaciones.guardar')}}" method="POST">
             @csrf
             <div class="form-header">
                 <h1 class="form-title"> C<span>otizaciones</span></h1>
@@ -227,7 +227,7 @@
             descuentos:descucan
         }
         $.ajax({
-            type: 'POST',  
+            type: 'post',  
             url: "{{route('cotizaciones.guardar')}}",  
             data: { data: data, _token: "{{ csrf_token() }}" } 
             }).done(function( msg ) { 
